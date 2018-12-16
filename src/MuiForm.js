@@ -9,11 +9,10 @@ import mui_fields from "./fields";
 import mui_widgets from "./widgets";
 
 export default class MuiForm extends Form {
-  constructor(props) {
-    let newProps = { ...props };
-    super(newProps);
-    this.props.ErrorList = ErrorList;
-  }
+  static defaultProps = {
+    ErrorList: ErrorList,
+    ...Form.defaultProps,
+  };
 
   getRegistry() {
     const { fields, widgets } = getDefaultRegistry();

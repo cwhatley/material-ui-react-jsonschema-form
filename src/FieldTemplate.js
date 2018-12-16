@@ -33,6 +33,7 @@ export default function DefaultTemplate(props) {
     let map = {
       textarea: true,
       checkboxes: true,
+      range: true,
     };
     console.log("mapped", map[l]);
     return !map[l];

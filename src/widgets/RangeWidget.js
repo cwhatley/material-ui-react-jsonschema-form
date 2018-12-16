@@ -1,21 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Slider } from "@material-ui/lab";
+import { Grid, Typography } from "@material-ui/core";
 
 import { rangeSpec } from "react-jsonschema-form/lib/utils";
 
 function RangeWidget(props) {
-  const {
-    schema,
-    value,
-    registry: {
-      widgets: { BaseInput },
-    },
-  } = props;
+  const { schema, value } = props;
+
   return (
-    <div className="field-range-wrapper">
-      <BaseInput type="range" {...props} {...rangeSpec(schema)} />
-      <span className="range-view">{value}</span>
-    </div>
+    <Grid container style={{ paddingTop: "12px" }}>
+      <Grid item xs={11}>
+        <Slider value={value} {...props} {...rangeSpec(schema)} />
+      </Grid>
+      <Grid item xs={1}>
+        <Typography>{value}</Typography>
+      </Grid>
+    </Grid>
   );
 }
 

@@ -44,7 +44,7 @@ function DefaultArrayItem(props) {
     fontWeight: "bold",
   };
   return (
-    <Grid container spacing="12" key={props.index}>
+    <Grid container spacing={16} key={props.index}>
       <Grid item xs={props.hasToolbar ? 9 : 12}>
         {props.children}
       </Grid>
@@ -154,15 +154,15 @@ function DefaultNormalArrayFieldTemplate(props) {
 
       <Grid
         container
-        spacing={12}
+        spacing={16}
         className="array-item-list"
         key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(p => DefaultArrayItem(p))}
 
         {props.canAdd && (
           <React.Fragment>
-            <Grid item xs="10" />
-            <Grid item xs="2">
+            <Grid item xs={10} />
+            <Grid item xs={2}>
               <AddButton
                 className="array-item-add"
                 onClick={props.onAddClick}
