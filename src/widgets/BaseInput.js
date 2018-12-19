@@ -7,7 +7,6 @@ function BaseInput(props) {
   // Note: since React 15.2.0 we can't forward unknown element attributes, so we
   // exclude the "options" and "schema" ones here.
   if (!props.id) {
-    console.log("No id for", props);
     throw new Error(`no id for props ${JSON.stringify(props)}`);
   }
   const {
@@ -33,13 +32,17 @@ function BaseInput(props) {
   return (
     <TextField
       className={classes.textField}
-      margin="normal"
+      margin="dense"
       readOnly={readonly}
       disabled={disabled}
       autoFocus={autofocus}
       fullWidth={true}
+      variant="outlined"
       value={value == null ? "" : value}
       {...inputProps}
+      InputLabelProps={{
+        shrink: inputProps.type !== "text" || value != null,
+      }}
       onChange={_onChange}
       onBlur={onBlur && (event => onBlur(inputProps.id, event.target.value))}
       onFocus={onFocus && (event => onFocus(inputProps.id, event.target.value))}

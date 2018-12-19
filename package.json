@@ -10,7 +10,7 @@
     "cs-check": "prettier -l $npm_package_prettierOptions '{playground,src,test}/**/*.js'",
     "cs-format": "prettier --jsx-bracket-same-line --trailing-comma es5 --use-tabs false --semi --tab-width 2 '{playground,src,test}/**/*.js' --write",
     "dist": "npm run build:lib && npm run build:dist",
-    "lint": "eslint src test playground",
+    "lint": "eslint --format unix src test playground",
     "prepare": "npm run dist",
     "precommit": "lint-staged",
     "publish-to-gh-pages": "npm run build:playground && gh-pages --dist build/",
@@ -43,9 +43,9 @@
     "react-dom": ">=16.6.3"
   },
   "dependencies": {
-    "@material-ui/core": "^3.5.1",
+    "@material-ui/core": "^3.7.0",
     "@material-ui/icons": "^3.0.1",
-    "@material-ui/lab": "^3.0.0-alpha.25",
+    "@material-ui/lab": "^3.0.0-alpha.26",
     "ajv": "^5.2.3",
     "babel-runtime": "^6.26.0",
     "core-js": "^2.5.7",

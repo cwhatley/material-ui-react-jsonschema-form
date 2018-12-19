@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Grid, Button } from "@material-ui/core";
 
 import {
   shouldRender,
@@ -40,6 +41,7 @@ function DateElement(props) {
       schema={{ type: "integer" }}
       id={id}
       className="form-control"
+      label={type}
       options={{ enumOptions: rangeOptions(range[0], range[1]) }}
       placeholder={type}
       value={value}
@@ -140,9 +142,9 @@ class AltDateWidget extends Component {
       options,
     } = this.props;
     return (
-      <ul className="list-inline">
+      <Grid container alignItems="center" spacing={8}>
         {this.dateElementProps.map((elemProps, i) => (
-          <li key={i}>
+          <Grid item key={i}>
             <DateElement
               rootId={id}
               select={this.onChange}
@@ -153,30 +155,27 @@ class AltDateWidget extends Component {
               onBlur={onBlur}
               autofocus={autofocus && i === 0}
             />
-          </li>
+          </Grid>
         ))}
         {(options.hideNowButton !== "undefined"
           ? !options.hideNowButton
           : true) && (
-          <li>
-            <a href="#" className="btn btn-info btn-now" onClick={this.setNow}>
+          <Grid item>
+            <Button onClick={this.setNow} variant="outlined" size="small">
               Now
-            </a>
-          </li>
+            </Button>
+          </Grid>
         )}
         {(options.hideClearButton !== "undefined"
           ? !options.hideClearButton
           : true) && (
-          <li>
-            <a
-              href="#"
-              className="btn btn-warning btn-clear"
-              onClick={this.clear}>
+          <Grid item>
+            <Button onClick={this.clear} variant="outlined" size="small">
               Clear
-            </a>
-          </li>
+            </Button>
+          </Grid>
         )}
-      </ul>
+      </Grid>
     );
   }
 }

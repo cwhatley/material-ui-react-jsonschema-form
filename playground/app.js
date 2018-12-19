@@ -274,7 +274,7 @@ class Editor extends Component {
     return (
       <Card>
         <CardContent>
-          <Typography variant="title" gutterBottom>
+          <Typography variant="h6" gutterBottom>
             {" " + title}
           </Typography>
           <CodeMirror
@@ -484,7 +484,7 @@ class _App extends Component {
       <div className={classes.root}>
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
-            <Typography variant="title">
+            <Typography variant="h6">
               React JsonSchema Form - Material UI
             </Typography>
           </Toolbar>

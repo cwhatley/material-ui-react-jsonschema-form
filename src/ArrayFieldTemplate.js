@@ -44,13 +44,13 @@ function DefaultArrayItem(props) {
     fontWeight: "bold",
   };
   return (
-    <Grid container spacing={16} key={props.index}>
-      <Grid item xs={props.hasToolbar ? 9 : 12}>
+    <Grid container key={props.index} alignItems="center">
+      <Grid item xs>
         {props.children}
       </Grid>
 
       {props.hasToolbar && (
-        <Grid item xs={3} className="array-item-toolbox">
+        <Grid item className="array-item-toolbox">
           {(props.hasMoveUp || props.hasMoveDown) && (
             <IconButton
               icon="arrow-up"
@@ -154,22 +154,22 @@ function DefaultNormalArrayFieldTemplate(props) {
 
       <Grid
         container
-        spacing={16}
+        spacing={8}
         className="array-item-list"
+        style={{ paddingLeft: "12px", paddingRight: "12px" }}
         key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(p => DefaultArrayItem(p))}
 
         {props.canAdd && (
-          <React.Fragment>
-            <Grid item xs={10} />
-            <Grid item xs={2}>
+          <Grid container justify="flex-end">
+            <Grid item>
               <AddButton
                 className="array-item-add"
                 onClick={props.onAddClick}
                 disabled={props.disabled || props.readonly}
               />
             </Grid>
-          </React.Fragment>
+          </Grid>
         )}
       </Grid>
     </Paper>

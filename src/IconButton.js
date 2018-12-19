@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton, Icon } from "@material-ui/core";
+import { Button, Icon } from "@material-ui/core";
 
 let mappings = {
   remove: "delete",
@@ -12,8 +12,8 @@ export default function _IconButton(props) {
   // was type = "default" in props
   const { icon, className, ...otherProps } = props;
   return (
-    <IconButton {...otherProps}>
+    <Button {...otherProps} size="small">
       <Icon>{mappings[icon] || icon}</Icon>
-    </IconButton>
+    </Button>
   );
 }

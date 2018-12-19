@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 
 export default function ErrorList(props) {
-  const { errors, schema } = props;
+  const { errors } = props;
   return (
     <Paper style={{ padding: "12px", margin: "12px" }}>
       <Typography variant="h6" component="h6">
@@ -18,7 +18,6 @@ export default function ErrorList(props) {
       </Typography>
       <List dense={true}>
         {errors.map((error, i) => {
-          console.log("error", error, schema);
           return (
             <ListItem key={i}>
               <ListItemIcon>

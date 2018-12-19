@@ -14,6 +14,7 @@ function TextareaWidget(props) {
     autofocus,
     onChange,
     onBlur,
+    label,
     onFocus,
   } = props;
   const _onChange = ({ target: { value } }) => {
@@ -30,6 +31,9 @@ function TextareaWidget(props) {
       readOnly={readonly}
       autoFocus={autofocus}
       multiline={true}
+      variant="outlined"
+      label={label}
+      margin="dense"
       fullWidth={true}
       rows={options.rows}
       onBlur={onBlur && (event => onBlur(id, event.target.value))}
@@ -53,6 +57,7 @@ if (process.env.NODE_ENV !== "production") {
       rows: PropTypes.number,
     }),
     value: PropTypes.string,
+    label: PropTypes.string,
     required: PropTypes.bool,
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,

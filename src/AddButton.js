@@ -4,8 +4,13 @@ import { Button, Icon } from "@material-ui/core";
 function _AddButton(props) {
   const { icon, className, ...otherProps } = props;
   return (
-    <Button {...otherProps} variant="contained" color="secondary" size="small">
-      <Icon>{icon}</Icon>
+    <Button
+      {...otherProps}
+      variant="outlined"
+      color="secondary"
+      size="small"
+      style={{ margin: "16px" }}>
+      <Icon>{icon}</Icon> Add Item
     </Button>
   );
 }

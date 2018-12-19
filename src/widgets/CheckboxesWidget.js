@@ -1,6 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Checkbox from "@material-ui/core/Checkbox";
+import {
+  FormControl,
+  FormLabel,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from "@material-ui/core";
 
 function selectValue(value, selected, all) {
   const at = all.indexOf(value);
@@ -15,18 +21,36 @@ function deselectValue(value, selected) {
 }
 
 function CheckboxesWidget(props) {
-  const { id, disabled, options, value, autofocus, readonly, onChange } = props;
+  const {
+    schema,
+    label,
+    id,
+    disabled,
+    options,
+    value,
+    autofocus,
+    readonly,
+    onChange,
+    rawErrors,
+    required,
+    classNames,
+  } = props;
   const { enumOptions, enumDisabled, inline } = options;
   return (
-    <div className="checkboxes" id={id}>
-      {enumOptions.map((option, index) => {
-        const checked = value.indexOf(option.value) !== -1;
-        const itemDisabled =
-          enumDisabled && enumDisabled.indexOf(option.value) != -1;
-        const disabledCls =
-          disabled || itemDisabled || readonly ? "disabled" : "";
-        const checkbox = (
-          <span>
+    <FormControl
+      margin="dense"
+      fullWidth={true}
+      margin="normal"
+      error={!!rawErrors}
+      required={required}
+      className={`rjsf-checkboxes ` + classNames}>
+      <FormLabel htmlFor={id}>{label || schema.title}</FormLabel>
+      <FormGroup>
+        {enumOptions.map((option, index) => {
+          const checked = value.indexOf(option.value) !== -1;
+          const itemDisabled =
+            enumDisabled && enumDisabled.indexOf(option.value) != -1;
+          const checkbox = (
             <Checkbox
               type="checkbox"
               id={`${id}_${index}`}
@@ -42,20 +66,23 @@ function CheckboxesWidget(props) {
                 }
               }}
             />
-            <span>{option.label}</span>
-          </span>
-        );
-        return inline ? (
-          <label key={index} className={`checkbox-inline ${disabledCls}`}>
-            {checkbox}
-          </label>
-        ) : (
-          <div key={index} className={`checkbox ${disabledCls}`}>
-            <label>{checkbox}</label>
-          </div>
-        );
-      })}
-    </div>
+          );
+          return inline ? (
+            <FormControlLabel
+              control={checkbox}
+              key={index}
+              label={option.label}
+            />
+          ) : (
+            <FormControlLabel
+              control={checkbox}
+              key={index}
+              label={option.label}
+            />
+          );
+        })}
+      </FormGroup>
+    </FormControl>
   );
 }
 

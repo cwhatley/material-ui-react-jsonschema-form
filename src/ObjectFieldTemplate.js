@@ -1,6 +1,6 @@
 import React from "react";
 import { Paper } from "@material-ui/core";
-
+import AddButton from "./AddButton";
 import { getUiOptions } from "react-jsonschema-form/lib/utils";
 
 export default function MuiObjectFieldTemplate(props) {
@@ -25,7 +25,8 @@ export default function MuiObjectFieldTemplate(props) {
   return (
     <Paper
       className={props.className}
-      style={{ padding: "18px", margin: "12px" }}>
+      style={{ padding: "12px", marginTop: "8px" }}
+      elevation={1}>
       {(props.uiSchema["ui:title"] || props.title) && (
         <TitleField
           id={`${props.idSchema.$id}__title`}
