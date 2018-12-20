@@ -4,6 +4,7 @@ import {
   FormControl,
   FormLabel,
   FormGroup,
+  FormHelperText,
   FormControlLabel,
   Checkbox,
 } from "@material-ui/core";
@@ -82,6 +83,8 @@ function CheckboxesWidget(props) {
           );
         })}
       </FormGroup>
+      {rawErrors &&
+        rawErrors.map((e, i) => <FormHelperText key={i}>{e}</FormHelperText>)}
     </FormControl>
   );
 }

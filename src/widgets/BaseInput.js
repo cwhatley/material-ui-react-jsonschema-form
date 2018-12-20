@@ -20,7 +20,11 @@ function BaseInput(props) {
     schema,
     formContext,
     registry,
+    help,
+    rawHelp,
     rawErrors,
+    description,
+    uiSchema,
     ...inputProps
   } = props;
 
@@ -37,6 +41,8 @@ function BaseInput(props) {
       disabled={disabled}
       autoFocus={autofocus}
       fullWidth={true}
+      error={rawErrors && rawErrors.length > 0}
+      helperText={rawErrors ? rawErrors.join(", ") : ""}
       variant="outlined"
       value={value == null ? "" : value}
       {...inputProps}

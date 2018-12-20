@@ -1,7 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DescriptionField from "../fields/DescriptionField.js";
-import { FormControlLabel, Checkbox } from "@material-ui/core";
+import {
+  FormControl,
+  FormControlLabel,
+  FormHelperText,
+  Checkbox,
+} from "@material-ui/core";
 
 function CheckboxWidget(props) {
   const {
@@ -12,12 +17,13 @@ function CheckboxWidget(props) {
     disabled,
     readonly,
     label,
+    rawErrors,
     autofocus,
     onChange,
   } = props;
 
   return (
-    <React.Fragment>
+    <FormControl error={!!rawErrors}>
       {schema.description && (
         <DescriptionField description={schema.description} />
       )}
@@ -35,7 +41,9 @@ function CheckboxWidget(props) {
         }
         label={label}
       />
-    </React.Fragment>
+      {rawErrors &&
+        rawErrors.map((e, i) => <FormHelperText key={i}>{e}</FormHelperText>)}
+    </FormControl>
   );
 }
 

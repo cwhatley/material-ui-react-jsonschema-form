@@ -6,6 +6,7 @@ import {
   FormControl,
   FormControlLabel,
   FormLabel,
+  FormHelperText,
 } from "@material-ui/core";
 
 function RadioWidget(props) {
@@ -36,7 +37,7 @@ function RadioWidget(props) {
       margin="dense"
       fullWidth={true}
       margin="normal"
-      error={!!rawErrors}
+      error={rawErrors && rawErrors.length}
       required={required}
       className={`rjsf-radio ` + classNames}
       style={{ paddingLeft: "16px" }}>
@@ -60,10 +61,11 @@ function RadioWidget(props) {
               autoFocus={autofocus && i === 0}
             />
           );
-
           return radio;
         })}
       </RadioGroup>
+      {rawErrors &&
+        rawErrors.map((e, i) => <FormHelperText key={i}>{e}</FormHelperText>)}
     </FormControl>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import {
+  FormHelperText,
   FormControl,
   MenuItem,
   Select,
@@ -160,6 +161,8 @@ class SelectWidget extends React.Component {
             );
           })}
         </Select>
+        {rawErrors &&
+          rawErrors.map((e, i) => <FormHelperText key={i}>{e}</FormHelperText>)}
       </FormControl>
     );
   }
