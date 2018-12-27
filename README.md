@@ -1,3 +1,5 @@
+## Table of Contents
+
 material-ui-react-jsonschema-form
 ==================================
 
