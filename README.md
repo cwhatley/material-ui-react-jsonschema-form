@@ -28,4 +28,6 @@ Use of this package should be roughly the same as 'mozilla-services/react-jsonsc
 
 ## Playground
 
-You can launch a playground that has been ported to material-ui via 'npm start'.
+Visit the playground at <https://cwhatley.github.io/material-ui-react-jsonschema-form/>
+
+You can launch a playground that has been ported to material-ui via `npm start`.
