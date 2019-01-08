@@ -13,6 +13,8 @@ material-ui-react-jsonschema-form
 
 ## Installation
 
+TODO: push to NPM
+
 ```
 npm i material-ui-react-jsonschema-form
 ```
