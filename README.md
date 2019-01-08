@@ -1,3 +1,5 @@
+![travis](https://travis-ci.org/cwhatley/material-ui-react-jsonschema-form.svg?branch=master)
+
 material-ui-react-jsonschema-form
 ==================================
 
