@@ -1,9 +1,9 @@
-![travis](https://travis-ci.org/cwhatley/material-ui-react-jsonschema-form.svg?branch=master)
+
 
 material-ui-react-jsonschema-form
 ==================================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/cwhatley/material-ui-react-jsonschema-form.svg)](https://greenkeeper.io/)
+![travis](https://travis-ci.org/cwhatley/material-ui-react-jsonschema-form.svg?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/cwhatley/material-ui-react-jsonschema-form.svg)](https://greenkeeper.io/)
 
 ## Table of Contents
 
