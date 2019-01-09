@@ -3,6 +3,8 @@
 material-ui-react-jsonschema-form
 ==================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cwhatley/material-ui-react-jsonschema-form.svg)](https://greenkeeper.io/)
+
 ## Table of Contents
 
   - [Installation](#installation)
