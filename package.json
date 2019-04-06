@@ -49,7 +49,7 @@
     "@material-ui/icons": "^3.0.1",
     "@material-ui/lab": "^3.0.0-alpha.26",
     "ajv": "^6.6.2",
-    "core-js": "^2.5.7",
+    "core-js": "^3.0.1",
     "lodash.topath": "^4.5.2",
     "prop-types": "^15.5.8",
     "react": "^16.6.3",
