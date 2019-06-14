@@ -1,12 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DescriptionField from "../fields/DescriptionField.js";
-import {
-  FormControl,
-  FormControlLabel,
-  FormHelperText,
-  Checkbox,
-} from "@material-ui/core";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 function CheckboxWidget(props) {
   const {

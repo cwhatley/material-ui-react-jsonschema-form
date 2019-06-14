@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import {
-  FormHelperText,
-  FormControl,
-  MenuItem,
-  Select,
-  InputLabel,
-  OutlinedInput,
-} from "@material-ui/core";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+import OutlinedInput from "@material-ui/core/OutlinedInput";
 
 const classes = PropTypes.object.isRequired;
 

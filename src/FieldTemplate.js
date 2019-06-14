@@ -1,6 +1,8 @@
 import { ADDITIONAL_PROPERTY_FLAG } from "react-jsonschema-form/lib/utils";
 import React from "react";
-import { TextField, FormLabel, Typography } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import FormLabel from "@material-ui/core/FormLabel";
+import Typography from "@material-ui/core/Typography";
 
 export default function DefaultTemplate(props) {
   const {

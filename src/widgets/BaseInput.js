@@ -11,7 +11,6 @@ function BaseInput(props) {
   }
   const {
     value,
-    readonly,
     disabled,
     autofocus,
     onBlur,
@@ -32,13 +31,13 @@ function BaseInput(props) {
   const _onChange = ({ target: { value } }) => {
     return props.onChange(value === "" ? options.emptyValue : value);
   };
-
+  const readonly = schema ? schema.readOnly : false;
   return (
     <TextField
       className={classes.textField}
       margin="dense"
       readOnly={readonly}
-      disabled={disabled}
+      disabled={disabled || readonly}
       autoFocus={autofocus}
       fullWidth={true}
       error={rawErrors && rawErrors.length > 0}

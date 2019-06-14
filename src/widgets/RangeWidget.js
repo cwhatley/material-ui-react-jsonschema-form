@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Slider } from "@material-ui/lab";
-import { Grid, Typography, InputLabel } from "@material-ui/core";
+import Slider from "@material-ui/lab/Slider";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import InputLabel from "@material-ui/core/InputLabel";
 
 import { rangeSpec } from "react-jsonschema-form/lib/utils";
 

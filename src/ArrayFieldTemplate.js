@@ -5,7 +5,8 @@ import {
 } from "react-jsonschema-form/lib/utils";
 import IconButton from "./IconButton";
 import AddButton from "./AddButton";
-import { Paper, Grid } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 export default function ArrayFieldTemplate(props) {
   const { schema, registry = getDefaultRegistry() } = props;

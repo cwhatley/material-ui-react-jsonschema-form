@@ -1,13 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  FormControl,
-  FormLabel,
-  FormGroup,
-  FormHelperText,
-  FormControlLabel,
-  Checkbox,
-} from "@material-ui/core";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Checkbox from "@material-ui/core/Checkbox";
 
 function selectValue(value, selected, all) {
   const at = all.indexOf(value);
