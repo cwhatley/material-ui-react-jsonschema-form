@@ -1,13 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  Radio,
-  RadioGroup,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  FormHelperText,
-} from "@material-ui/core";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControl from "@material-ui/core/FormControl";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 function RadioWidget(props) {
   const {
@@ -31,6 +29,7 @@ function RadioWidget(props) {
     onChange(schema.type == "boolean" ? value !== "false" : value);
   // checked={checked} has been moved above name={name}, As mentioned in #349;
   // this is a temporary fix for radio button rendering bug in React, facebook/react#7630.
+  const row = options ? options.inline : false;
   return (
     <FormControl
       variant="outlined"
@@ -47,7 +46,8 @@ function RadioWidget(props) {
         className="field-radio-group"
         value={`${value}`}
         onChange={_onChange}
-        required={required}>
+        required={required}
+        row={row}>
         {enumOptions.map((option, i) => {
           const itemDisabled =
             enumDisabled && enumDisabled.indexOf(option.value) != -1;

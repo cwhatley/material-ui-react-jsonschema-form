@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextField } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
 
 function TextareaWidget(props) {
   const {
@@ -10,16 +10,17 @@ function TextareaWidget(props) {
     value,
     required,
     disabled,
-    readonly,
     autofocus,
     onChange,
     onBlur,
     label,
     onFocus,
+    schema,
   } = props;
   const _onChange = ({ target: { value } }) => {
     return onChange(value === "" ? options.emptyValue : value);
   };
+  const readonly = schema ? schema.readOnly : false;
   return (
     <TextField
       id={id}
@@ -27,8 +28,7 @@ function TextareaWidget(props) {
       value={typeof value === "undefined" ? "" : value}
       placeholder={placeholder}
       required={required}
-      disabled={disabled}
-      readOnly={readonly}
+      disabled={disabled || readonly}
       autoFocus={autofocus}
       multiline={true}
       variant="outlined"

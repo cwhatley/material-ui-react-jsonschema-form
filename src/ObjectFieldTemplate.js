@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
 import AddButton from "./AddButton";
 import { getUiOptions } from "react-jsonschema-form/lib/utils";
 
