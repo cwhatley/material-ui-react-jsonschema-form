@@ -1,4 +1,7 @@
+Deprecated
+====
 
+Please see (https://github.com/mozilla-services/react-jsonschema-form/issues/1222) and take a look at (https://github.com/cybertec-postgresql/rjsf-material-ui) for a material-ui widget theming of RJSF that hooks into their theming more directly.
 
 material-ui-react-jsonschema-form
 ==================================
