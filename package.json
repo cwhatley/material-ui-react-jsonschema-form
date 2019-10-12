@@ -88,7 +88,7 @@
     "jsdom": "^13.1.0",
     "json-loader": "^0.5.7",
     "lint-staged": "^8.1.0",
-    "mini-css-extract-plugin": "^0.5.0",
+    "mini-css-extract-plugin": "^0.6.0",
     "mocha": "^5.2.0",
     "prettier": "^1.15.1",
     "react": "^16.6.3",
